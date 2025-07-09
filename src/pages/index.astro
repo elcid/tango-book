@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="ABRAZOS - Tango & Argentina">
-	<!-- Hero Section -->
+	<!-- Hero Section (unchanged) -->
 	<div class="min-h-screen bg-gradient-to-br from-purple-900 to-indigo-900 text-white flex items-center justify-center p-6">
 		<div class="max-w-4xl mx-auto text-center">
 			<h1 class="text-5xl md:text-6xl font-bold mb-6">ABRAZOS</h1>
@@ -17,68 +17,57 @@ import Layout from '../layouts/Layout.astro';
 		<div class="max-w-4xl mx-auto px-6">
 			<h2 class="text-4xl font-bold mb-8 text-center">Tango in allen Lebenslagen</h2>
 
-			<div class="flex flex-col md:flex-row gap-8 items-center">
-				<!-- Book Cover -->
+			<!-- Flex Container für Buchcover und Beschreibung -->
+			<div class="flex flex-col md:flex-row gap-8">
+				<!-- Buchcover (links auf Mobile, oben auf Desktop) -->
 				<div class="w-full md:w-1/3">
-					<img src="/TangoBuch.png" alt="Tango in allen Lebenslagen" class="rounded-lg shadow-lg">
+					<img
+						src="/TangoBuch.png"
+						alt="Tango in allen Lebenslagen"
+						class="rounded-lg shadow-lg w-full"
+					>
 				</div>
 
-				<!-- Book Info -->
+				<!-- Buchinfo (rechts auf Desktop, unter dem Cover auf Mobile) -->
 				<div class="w-full md:w-2/3">
 					<h3 class="text-2xl font-bold mb-4">Beschreibung</h3>
-					<p class="text-lg leading-relaxed mb-6">
-						<strong>Tango in allen Lebenslagen. Anekdoten über Musiker, Sänger und Tänzer</strong>
-						ist ein faszinierendes Buch, das die Geschichte und Kultur des Tango in deutscher und spanischer Sprache erzählt.
-						Mit Anekdoten über berühmte Tango-Persönlichkeiten und QR-Codes für Hörbeispiele bietet es einen einzigartigen Einblick.
-					</p>
 
+					<!-- Beschreibungstext -->
+					<div class="text-lg leading-relaxed mb-6">
+						<p><strong>Tango in allen Lebenslagen. Anekdoten über Musiker, Sänger und Tänzer</strong> ist ein faszinierendes Buch, das die Geschichte und Kultur des Tango in deutscher und spanischer Sprache erzählt.</p>
 
-					<div class="tabbed-content  wc-tabs-wrapper woocommerce-tabs ">
-						<div class="panel wc-tab entry-content active" id="tab-description">
+						<p><strong>Das Buch</strong></p>
+						<p>Nach der Pionierarbeit von Dieter Reichardt sind mehrere Tangobücher in deutscher Sprache erschienen, die die Geschichte und den Tanz im engeren Sinne analysieren...</p>
 
-							<p><strong>Das Buch</strong></p>
-							<p>Nach der Pionierarbeit von Dieter Reichardt sind mehrere Tangobücher in deutscher Sprache erschienen, die die Geschichte und den Tanz im engeren Sinne analysieren. Wenn Sie den Tanz und seine Musik lieben, erinnern Sie sich sicherlich an die Namen der wichtigsten Orchester; Sie kennen einige berühmte Tänzer, die auf der Bühne aufgefallen sind. Trotzdem sind uns allen die Menschen, die die Kultur des Tangos geschaffen haben, immer noch fremd. Dieses Buch versucht, diese Lücke mit Anekdoten und Kurzgeschichten zu füllen. Es sind Geschichten über die wichtigsten Tangosänger, Musiker, Dichter und Tangotänzer; auch Tangostücke mit Text oder rein instrumental werden vorgestellt. Ein QR-Code führt Sie direkt zu Hinweisen im Internet, wo Sie als Leser*in sich das Stück anhören oder manchmal sogar beim Tanzen zuschauen können.</p>
-							<p><strong>Die Autoren</strong></p>
-							<p>—Wann hat er Dich gefunden, Rodrigo?</p>
-							<p>— Ich habe ihn schon als Kind in Chile bei meinem Onkel gehört, dann viele Jahre vergessen und 1999 in Köln wieder entdeckt; habe angefangen zu tanzen und mich immer tiefer für die Musiker und die Geschichten, die die Tangolieder erzählen, interessiert.</p>
-							<p>—und Dich, Monika?</p>
-							<p>—Ich habe schon immer getanzt und dann eröffnete in Kassel 1997 eine Milonga, zu der ich aus tänzerischer Neugierde hingehen musste. Seitdem hat er mich gepackt und nicht mehr losgelassen bis heute.</p>
-							<p>—Wie kam es zu diesem Buch?</p>
-							<p>Rodrigo: Seit 2002 tanzen wir zusammen und wohnen wir seit 2007 in Berlin und ich entdeckte das Iberoamerikanische Institut als Fundgrube für Literatur über Tango, natürlich in Spanisch. Irgendwann wollte ich mehr Menschen an den Hintergrundgeschichten teilhaben lassen und habe im Juli 2007 angefangen in der Yahoo-Tangogruppe kleine Geschichten, die ich gelesen hatte, auf Deutsch zu veröffentlichen und bekam darauf viel positive Resonanz. Ich habe Monika gebeten mir bei der Korrektur zu helfen, da Deutsch meine 3. Fremdsprache ist.</p>
-							<p>Monika: Als wir über die grammatikalischen Korrekturen diskutiert haben, sind wir tiefer über sprachliche Feinheiten zu den Hintergründen und Kontexten vorgedrungen und dann haben wir beide als Tänzer festgestellt, das wir mehr im Einklang mit Musik und Text tanzen und wir können die musikalischen Perioden, Orchester und musikalische Stile besser einordnen. Diese Hintergründe wollen wir nun einem breiteren Publikum —Tänzern, Musikern und Genschichtenliebhabern— zugänglich machen und hoffen, dass es Euch —liebe Leser*innen auch erwischt: Der Tango wartet auch auf Dich…</p>
-						</div>
+						<p><strong>Die Autoren</strong></p>
+						<p>—Wann hat er Dich gefunden, Rodrigo?</p>
+						<p>— Ich habe ihn schon als Kind in Chile bei meinem Onkel gehört, dann viele Jahre vergessen und 1999 in Köln wieder entdeckt; habe angefangen zu tanzen und mich immer tiefer für die Musiker und die Geschichten, die die Tangolieder erzählen, interessiert.</p>
+						<p>—und Dich, Monika?</p>
+						<p>—Ich habe schon immer getanzt und dann eröffnete in Kassel 1997 eine Milonga, zu der ich aus tänzerischer Neugierde hingehen musste. Seitdem hat er mich gepackt und nicht mehr losgelassen bis heute.</p>
+						<p>—Wie kam es zu diesem Buch?</p>
+						<p>Rodrigo: Seit 2002 tanzen wir zusammen und wohnen wir seit 2007 in Berlin und ich entdeckte das Iberoamerikanische Institut als Fundgrube für Literatur über Tango, natürlich in Spanisch. Irgendwann wollte ich mehr Menschen an den Hintergrundgeschichten teilhaben lassen und habe im Juli 2007 angefangen in der Yahoo-Tangogruppe kleine Geschichten, die ich gelesen hatte, auf Deutsch zu veröffentlichen und bekam darauf viel positive Resonanz. Ich habe Monika gebeten mir bei der Korrektur zu helfen, da Deutsch meine 3. Fremdsprache ist.</p>
+						<p>Monika: Als wir über die grammatikalischen Korrekturen diskutiert haben, sind wir tiefer über sprachliche Feinheiten zu den Hintergründen und Kontexten vorgedrungen und dann haben wir beide als Tänzer festgestellt, das wir mehr im Einklang mit Musik und Text tanzen und wir können die musikalischen Perioden, Orchester und musikalische Stile besser einordnen. Diese Hintergründe wollen wir nun einem breiteren Publikum —Tänzern, Musikern und Genschichtenliebhabern— zugänglich machen und hoffen, dass es Euch —liebe Leser*innen auch erwischt: Der Tango wartet auch auf Dich…</p>
 
 					</div>
 
-
-
-					<ul class="space-y-4">
+					<!-- Buchdetails (Autoren, Preis, ISBN) -->
+					<ul class="space-y-4 mb-6">
 						<li><strong>Autoren:</strong> Rodrigo Reyes Martinez und Monika Fröhlich</li>
 						<li><strong>Preis:</strong> €22,00</li>
 						<li><strong>ISBN:</strong> 978-987-8283-1-1</li>
 					</ul>
 
-					<a href="#buy" class="mt-6 inline-block bg-purple-900 text-white px-8 py-3 rounded-full font-semibold hover:bg-purple-800 transition duration-300">
+					<!-- "Jetzt kaufen"-Button unten halten -->
+					<a
+						href="#buy"
+						class="inline-block bg-purple-900 text-white px-8 py-3 rounded-full font-semibold hover:bg-purple-800 transition duration-300"
+					>
 						Jetzt kaufen
 					</a>
 				</div>
 			</div>
 		</div>
-		<div id="preview" class="py-20 bg-white text-gray-900">
-
-			<div class="max-w-4xl mx-auto px-6">
-				<h2 class="text-4xl font-bold mb-8 text-center">Preview</h2>
-				<p class="text-lg leading-relaxed mb-8">Here's a sneak peek into the first chapter of the book...</p>
-				<div class="bg-gray-50 p-8 rounded-lg shadow-md">
-					<p class="text-gray-800 leading-relaxed">
-						Once upon a time, in a land far, far away, there was a young adventurer named Elara.
-						Elara had always dreamed of exploring the unknown and uncovering the secrets of the ancient world...
-					</p>
-
-				</div>
-
-			</div>
-
-		</div>
 	</div>
+
+	<!-- Weitere Inhalte (z.B. Preview) -->
 </Layout>
