@@ -1,0 +1,17 @@
+---
+const { title, content, image, videoUrl, videoCaption } = Astro.props;
+---
+<div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+    <img
+            src={image}
+            alt={title}
+            class="w-full h-[805px] md:h-auto aspect-[1080/805] object-cover"
+            loading="lazy"
+    />
+    <h3 class="text-xl font-semibold mb-2">{title}</h3>
+    <p class="text-gray-600 mb-4">{content}</p>
+    <a href={videoUrl} class="text-blue-600 hover:text-blue-700 underline mb-2 inline-block">
+        Watch Video on YouTube
+    </a>
+    <p class="text-gray-500 text-sm italic">{videoCaption}</p>
+</div>
