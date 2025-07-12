@@ -5,3 +5,61 @@
         @apply antialiased;
     }
 }
+/* Tooltip Styles */
+[data-tooltip] {
+    position: relative;
+    display: inline-block;
+}
+
+[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: calc(100% + 8px); /* Position below the text */
+    right: 0; /* Align to right side */
+    padding: 0.5rem 1rem;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 0.875rem;
+    border-radius: 0.25rem;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 10;
+    border: 1px solid #e5e7eb;
+}
+
+/* Tooltip arrow */
+[data-tooltip]::before {
+    content: "";
+    position: absolute;
+    bottom: -5px; /* Position arrow below tooltip */
+    right: 15px; /* Align arrow with tooltip */
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ffffff transparent transparent transparent;
+    transform: rotate(180deg); /* Flip arrow to point up */
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Back Link Styles */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    color: #4a5568;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: #1a202c;
+}
+
+.back-link svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.5rem;
+}

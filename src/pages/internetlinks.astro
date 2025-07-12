@@ -3,22 +3,27 @@
 import '../styles/global.css';
 import Layout from '../layouts/Layout.astro';
 ---
-
 <Layout title="Internetlinks">
-    <div class="min-h-screen bg-[#f3f4f6] py-12 px-4">
-        <div class="max-w-4xl mx-auto">
-            <div class="bg-white rounded-2xl shadow-xl p-8">
-                <h1 class="text-4xl font-bold text-center text-gray-800 mb-12 bg-gray-50 py-4 rounded-xl">
-                    🌐 Internetlinks
-                </h1>
+<div class="min-h-screen bg-[#f3f4f6] py-12 px-4">
+    <div class="max-w-4xl mx-auto">
+        <!-- Back to Home link using global styles -->
+        <div class="mb-8">
+            <a href="/tango-book/" class="back-link">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                Zurück zur Startseite
+            </a>
+        </div>
+        <div class="bg-white rounded-2xl shadow-xl p-8">
+            <!-- Tooltip implementation using global styles -->
+            <h1 class="text-4xl font-bold text-center text-gray-800 mb-12 bg-gray-50 py-4 rounded-xl"
+                data-tooltip="Links die in Buch genannt werden">
+                🌐 Internetlinks
+            </h1>
                 <div class="space-y-10">
                     <!-- Todotango Section -->
                     <div class="bg-gray-50 p-8 rounded-xl">
-                        <div class="bg-gray-50 p-8 rounded-xl">
-                            <p class="text-gray-600 mb-6">
-                                Links das in Buch genannt werden.
-                            </p>
-                        </div>
                         <div class="flex items-center mb-6">
                             <span class="text-blue-600 text-2xl mr-4">📌</span>
                             <h2 class="text-2xl font-semibold text-gray-700">Todotango</h2>
@@ -32,7 +37,6 @@ import Layout from '../layouts/Layout.astro';
                             </a>
                         </div>
                     </div>
-
                     <!-- Wikipedia Links Section -->
                     <div class="bg-gray-50 p-8 rounded-xl">
                         <div class="flex items-center mb-6">
@@ -60,7 +64,6 @@ import Layout from '../layouts/Layout.astro';
                             </a>
                         </div>
                     </div>
-
                     <!-- Additional Links Section -->
                     <div class="bg-gray-50 p-8 rounded-xl">
                         <div class="flex items-center mb-6">
