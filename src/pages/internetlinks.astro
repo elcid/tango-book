@@ -1,0 +1,89 @@
+---
+// src/pages/internetlinks.astro
+import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Internetlinks">
+    <div class="min-h-screen bg-[#f3f4f6] py-12 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <h1 class="text-4xl font-bold text-center text-gray-800 mb-12 bg-gray-50 py-4 rounded-xl">
+                    🌐 Internetlinks
+                </h1>
+                <div class="space-y-10">
+                    <!-- Todotango Section -->
+                    <div class="bg-gray-50 p-8 rounded-xl">
+                        <div class="bg-gray-50 p-8 rounded-xl">
+                            <p class="text-gray-600 mb-6">
+                                Links das in Buch genannt werden.
+                            </p>
+                        </div>
+                        <div class="flex items-center mb-6">
+                            <span class="text-blue-600 text-2xl mr-4">📌</span>
+                            <h2 class="text-2xl font-semibold text-gray-700">Todotango</h2>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            Ausgezeichnete Quelle für Informationen über Interpreten und Geschichte des Tango, zweisprachig spanisch und englisch. Viele Links zu Noten, Aufnahmen und Videos.
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <a href="https://www.todotango.com" class="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <span class="text-blue-600 hover:text-blue-700 underline">todotango.com</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Wikipedia Links Section -->
+                    <div class="bg-gray-50 p-8 rounded-xl">
+                        <div class="flex items-center mb-6">
+                            <span class="text-blue-600 text-2xl mr-4">📚</span>
+                            <h2 class="text-2xl font-semibold text-gray-700">Wikipedia Links</h2>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <a href="https://en.wikipedia.org/wiki/TangoVia_Buenos_Aires" class="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <span class="text-blue-600 hover:text-blue-700 underline">W[1]: TangoVia Buenos Aires</span>
+                            </a>
+                            <a href="https://en.wikipedia.org/wiki/El_Morocco" class="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <span class="text-blue-600 hover:text-blue-700 underline">W[2]: El Morocco</span>
+                            </a>
+                            <a href="https://en.wikipedia.org/wiki/Zoot_suit" class="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <span class="text-blue-600 hover:text-blue-700 underline">W[3]: Zoot suit</span>
+                            </a>
+                            <a href="https://de.wikipedia.org/wiki/Caf%C3%A9_Tortoni" class="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <span class="text-blue-600 hover:text-blue-700 underline">W[4]: Café Tortoni</span>
+                            </a>
+                            <a href="https://de.wikipedia.org/wiki/Waldo_Frank" class="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <span class="text-blue-600 hover:text-blue-700 underline">W[5]: Waldo Frank</span>
+                            </a>
+                            <a href="https://de.wikipedia.org/wiki/Horacio_Quiroga" class="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <span class="text-blue-600 hover:text-blue-700 underline">W[6]: Horacio Quiroga</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Additional Links Section -->
+                    <div class="bg-gray-50 p-8 rounded-xl">
+                        <div class="flex items-center mb-6">
+                            <span class="text-blue-600 text-2xl mr-4">🔗</span>
+                            <h2 class="text-2xl font-semibold text-gray-700">Weitere Links</h2>
+                        </div>
+                        <div class="space-y-4">
+                            <a href="https://www.cafetortoni.com.ar/" class="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <span class="text-blue-600 hover:text-blue-700 underline">L[1]: Café Tortoni</span>
+                            </a>
+                            <a href="https://kcbetancur.de/texte/wo-die-liebe-einkehrt" class="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <span class="text-blue-600 hover:text-blue-700 underline">L[2]: Wo die Liebe einkehrt</span>
+                            </a>
+                            <a href="https://lloicaczackis.com/documentation/The_history_of_Yiddish_Tango_by_Lloica_Czackis.pdf" class="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <span class="text-blue-600 hover:text-blue-700 underline">L[3]: Geschichte des Yiddish Tango</span>
+                            </a>
+                            <a href="https://www.abrazosbooks.com/pdf/tango_en_japon_en_aleman.pdf" class="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <span class="text-blue-600 hover:text-blue-700 underline">L[4]: Tango in Japan (Deutsch)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>
