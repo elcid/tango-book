@@ -11,9 +11,16 @@ module.exports = {
         'bg-gradient-to-b',
         'from-yellow-500',
         'to-orange-500',
+        'from-custom-light-red',
+        'to-custom-red',
     ],
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                'from-custom-light-red': '#ecc4c7',
+                'to-custom-red': '#ec2b37'
+            }
+        },
     },
     plugins: [],
 }
