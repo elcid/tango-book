@@ -1,73 +1,242 @@
 ---
-// src/pages/index.astro
-import Layout from '../layouts/Layout.astro';
+import PreviewCard from '../components/PreviewCard.astro';
+const content1 = `Im Jahr 1931 machte das Orchester von Julio de Caro eine Tour
+durch Europa, diesmal waren sie bei einer konzertanten Aufführung
+in Nizza; die Musik war nicht zum Tanzen gedacht. Das Konzert
+sollte eine halbe Stunde dauern, was schnell zu einer voller Stunde
+geworden ist. Gardel war anwesend und unter den vielen Prominenten
+von damals war auch Charlie Chaplin. Bei dem Stück von De Caros El
+monito (Das Äffchen) konnte sich Chaplin nicht mehr auf dem Sitz
+halten und begann zu tanzen, die Gäste fanden das eine gute Idee
+und rückten Tische und Stühle zur Seite und tanzten mit.
+Mit dem 'Äffchen' ist der kleine Affe gemeint, den die Drehorgels-
+pieler häufig dabei hatten. Im übrigen trugen diese Straßenmusiker
+dazu bei den Tango zu verbreiten, indem sie spielend durch verschie-
+dene Bezirke von Buenos Aires zogen.`;
+const content2 = `Domingo Federico (1916-2000) war, bevor er Musiker wurde,
+Medizinstudent. Einmal war er bei der Vivisektion eines Frosches zu-
+gegen und beim Sehen des pochendes Herzens des Frosches hat er
+die Idee für eine Tango Melodie bekommen. Der Dichter Homero
+Expósito hat die Melodie dann beim telefonieren gesummt. Al compás del corazón, siehe vorherige Anekdote (Im Takt des Herzens, ist
+auch unter Late un corazón bekannt, Es pocht ein Herz). Das Lied
+hat den Frosch vergessen und gilt heute wie damals als einer der
+romantischsten Tangos überhaupt!`;
+const content3 = `Jeder, der Tango tanzt, kennt wahrscheinlich der Tango Gallo Ciego
+(Blinder Hahn, s. auch Anekdote 28 auf Seite 41) in der Version vom
+Osvaldo Pugliese‘s Orchester. Dieser wurde am 25 Juli 1959 kurz
+vor der Reise des Orchester in die Sowjetunion und nach China aufgenommen. Es war ein Auftrag, den Pugliese dem damaligen neuen
+Bandoneonist Víctor Lavallén gegeben hatte. Es war nämlich so,
+dass jedes neue Mitglied seines Orchesters einige Tangos arrangieren
+musste als Bedingung spielen zu dürfen. Lavallén entschied sich Gallo
+ciego zusammen mit El pañuelito zu arrangieren. Als das Orchester
+von seiner Tournee zurück nach Buenos Aires kam, war der letzte
+Tango ein großer Erfolg, der Tango Gallo ciego überhaupt nicht. So
+sehr war dieser ein Flop, dass er mit der Zeit fast in Vergessenheit
+geriet und wurde gar nicht mehr in der Milongas gespielt, geschweige
+getanzt. Das war die Lage bis Anfang der 90er Jahre, als ein Paar
+aus Europa ihn in ihr Repertoire für Ihre Shows wählte. Seitdem ist
+dieses Musikstück ein beliebter Tango für Shows. Eine Suche nach
+diesem Tango und Osvaldo Pugliese in YouTube ergibt eine fünfstellige Anzahl an Videos! Welches Paar es war, lasse ich als Rätsel. Die
+Lösung kann man von Lavallén selbst hören (ab der 21 Minute):`;
+const content4 = `Nach dem Putsch des Militärs im Jahre 1943 wurde in Argentinien
+eine rigorose Zensur des Tango und anderer Medien wie Radio und
+Presse eingeführt. Diese Zensur blieb in Kraft bis 1949. Was schon
+seit Anfang der dreißiger Jahre von Konservativen und auch von Teilen
+der katholischen Kirche gefordert wurde, wurde jetzt mit den Militärs
+durchgesetzt. Besonders in Verruf kamen Tangos, die zu „negativ“
+waren oder das Lunfardo in seinen Texten benutzten; unter diesen
+befanden sich aber genau die besten Tangos. Die Zensur betraf am
+meisten das Radio. Es durften nur „positive“ Tangos ausgestrahlt
+werden, und die Lunfardo-Texte durften nur in korrektem spanisch
+gesungen werden. Es betraft auch Instrumentaltangos, wie der Tango
+Lo que vendrá von Astor Piazzolla und andere.
+Aus dieser Zeit sind auch die Tangos Para lucirse (Ein Show ab-
+ziehen) und Prepárense (Bereitet euch vor), die von verschiedenen Orchestern in ihrem Repertoire aufgenommen wurden. Als dritte Kom-
+144position sollte Lo que vendrá (Was kommen wird) genannt werden,
+aber als die Unruhen vor der Wiederwahl von Perón am 11 November
+1951 ausbrachen, war der Titel unpassend, den es könnte Zweifel an
+der Wiederwahl Peróns oder eine eventuelle Niederlage hineininterpretiert werden.
+Welcher Druck auf Piazzolla ausgeübt wurde, hat er selbst nicht
+gesagt, sicher ist, dass er seinen Tango mit dem Titel Contratiempo
+veröffentlicht hat anstatt Lo que vendrá. Der neue Name ist zum
+Teil der musikalischen Struktur des Tango selbst zu verdanken, und
+zum Teil ein Wortspiel Contratiempo bedeutet im spanischen sowohl
+musikalischer Kontrapunkt als auch Widerwille.
+Nach Contratiempo hat er Triunfal (Triumphierend) und Contrabajeando (Bass- spielend, mit Troilo) komponiert. Endlich 1954 konnte
+er einen neuen komponierten Tango als Lo que vendrá nennen, der
+später berühmt wurde.`;
+import '../styles/global.css';
+const currentYear = new Date().getFullYear();
 ---
-
-<Layout title="Tango in allen Lebenslagen">
-	<!-- Hero Section (unchanged) -->
-	<div class="min-h-screen bg-gradient-to-br from-purple-900 to-indigo-900 text-white flex items-center justify-center p-6">
-		<div class="max-w-4xl mx-auto text-center">
-			<h1 class="text-5xl md:text-6xl font-bold mb-6">Tango in allen Lebenslagen</h1>
-			<p class="text-xl md:text-2xl mb-8">Anekdoten über Musiker, Sänger und Tänzer</p>
+<html lang="de">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>Tango in allen Lebenslagen</title>
+</head>
+<body class="bg-white text-gray-800 min-h-screen">
+{/* Header */}
+<header class="bg-gradient-to-b from-yellow-500 to-orange-500 text-white py-12 px-6">
+	<div class="max-w-4xl mx-auto">
+		<h1 class="text-4xl font-bold mb-4">Tango in allen Lebenslagen</h1>
+		<p class="text-xl mb-8">Anekdoten über Musiker, Sänger und Tänzer</p>
+		<a
+			href="#buy"
+			class="bg-white hover:bg-gray-100 text-yellow-500 font-semibold px-6 py-3 rounded-md transition duration-300 shadow-md"
+		>
+			Jetzt kaufen
+		</a>
+	</div>
+</header>
+{/* Book Cover Section */}
+<section id="cover" class="py-12 px-6 bg-gray-100">
+	<div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
+		<div class="md:w-1/2">
+			<img
+				src="/TangoBuch.png"
+				alt="Cover of Tango in allen Lebenslagen"
+				class="w-full h-auto rounded-lg shadow-md"
+			/>
+		</div>
+		<div class="md:w-1/2">
+			<h2 class="text-3xl font-bold mb-4">Über das Buch</h2>
+			<p class="text-lg mb-6">
+				„Tango in allen Lebenslagen“ ist ein faszinierendes Sammelwerk von Anekdoten, die die Welt des Tangos beleben. Von berühmten Komponisten wie Carlos Gardel bis hin zu unvergesslichen Tänzern und Musikern – dieses Buch erzählt die Geschichte des Tangos aus vielfältigen Perspektiven.
+			</p>
+			<p class="text-lg mb-6">
+				Der Autor, Dr. J. Rodrigo Reyes Martínez, zusammen mit Monika Fröhlich, führt den Leser durch die lebendige Kultur des Tangos, wobei jeder Beitrag eine Einblicke in die Herzen und Seelen derjenigen gibt, die diese kulturelle Schatztruhe geschaffen haben.
+			</p>
+			<p class="text-lg mb-6">
+				Ob Sie Tango lieben oder neu im Genre sind – dieses Buch bietet einen tiefgehenden Einblick in die Welt des Tangos und seine bedeutenden Figuren.
+			</p>
 		</div>
 	</div>
-
-	<!-- Book Details Section -->
-	<div id="book-details" class="py-20 bg-white text-gray-900">
-		<div class="max-w-4xl mx-auto px-6">
-			<h2 class="text-4xl font-bold mb-8 text-center">Tango in allen Lebenslagen</h2>
-
-			<!-- Flex Container für Buchcover und Beschreibung -->
-			<div class="flex flex-col md:flex-row gap-8">
-				<!-- Buchcover (links auf Mobile, oben auf Desktop) -->
-				<div class="w-full md:w-1/3">
-					<img
-						src="/TangoBuch.png"
-						alt="Tango in allen Lebenslagen"
-						class="rounded-lg shadow-lg w-full"
-					>
-				</div>
-
-				<!-- Buchinfo (rechts auf Desktop, unter dem Cover auf Mobile) -->
-				<div class="w-full md:w-2/3">
-					<h3 class="text-2xl font-bold mb-4">Beschreibung</h3>
-
-					<!-- Beschreibungstext -->
-					<div class="text-lg leading-relaxed mb-6">
-						<p><strong>Tango in allen Lebenslagen. Anekdoten über Musiker, Sänger und Tänzer</strong> ist ein faszinierendes Buch, das die Geschichte und Kultur des Tango in deutscher und spanischer Sprache erzählt.</p>
-
-						<p><strong>Das Buch</strong></p>
-						<p>Nach der Pionierarbeit von Dieter Reichardt sind mehrere Tangobücher in deutscher Sprache erschienen, die die Geschichte und den Tanz im engeren Sinne analysieren...</p>
-
-						<p><strong>Die Autoren</strong></p>
-						<p>—Wann hat er Dich gefunden, Rodrigo?</p>
-						<p>— Ich habe ihn schon als Kind in Chile bei meinem Onkel gehört, dann viele Jahre vergessen und 1999 in Köln wieder entdeckt; habe angefangen zu tanzen und mich immer tiefer für die Musiker und die Geschichten, die die Tangolieder erzählen, interessiert.</p>
-						<p>—und Dich, Monika?</p>
-						<p>—Ich habe schon immer getanzt und dann eröffnete in Kassel 1997 eine Milonga, zu der ich aus tänzerischer Neugierde hingehen musste. Seitdem hat er mich gepackt und nicht mehr losgelassen bis heute.</p>
-						<p>—Wie kam es zu diesem Buch?</p>
-						<p>Rodrigo: Seit 2002 tanzen wir zusammen und wohnen wir seit 2007 in Berlin und ich entdeckte das Iberoamerikanische Institut als Fundgrube für Literatur über Tango, natürlich in Spanisch. Irgendwann wollte ich mehr Menschen an den Hintergrundgeschichten teilhaben lassen und habe im Juli 2007 angefangen in der Yahoo-Tangogruppe kleine Geschichten, die ich gelesen hatte, auf Deutsch zu veröffentlichen und bekam darauf viel positive Resonanz. Ich habe Monika gebeten mir bei der Korrektur zu helfen, da Deutsch meine 3. Fremdsprache ist.</p>
-						<p>Monika: Als wir über die grammatikalischen Korrekturen diskutiert haben, sind wir tiefer über sprachliche Feinheiten zu den Hintergründen und Kontexten vorgedrungen und dann haben wir beide als Tänzer festgestellt, das wir mehr im Einklang mit Musik und Text tanzen und wir können die musikalischen Perioden, Orchester und musikalische Stile besser einordnen. Diese Hintergründe wollen wir nun einem breiteren Publikum —Tänzern, Musikern und Genschichtenliebhabern— zugänglich machen und hoffen, dass es Euch —liebe Leser*innen auch erwischt: Der Tango wartet auch auf Dich…</p>
-
-					</div>
-
-					<!-- Buchdetails (Autoren, Preis, ISBN) -->
-					<ul class="space-y-4 mb-6">
-						<li><strong>Autoren:</strong> Rodrigo Reyes Martinez und Monika Fröhlich</li>
-						<li><strong>Preis:</strong> €22,00</li>
-						<li><strong>ISBN:</strong> 978-987-8283-1-1</li>
-					</ul>
-
-					<!-- "Jetzt kaufen"-Button unten halten -->
-					<a
-						href="#buy"
-						class="inline-block bg-purple-900 text-white px-8 py-3 rounded-full font-semibold hover:bg-purple-800 transition duration-300"
-					>
-						Jetzt kaufen
-					</a>
-				</div>
+</section>
+{/* Preview Section */}
+<section id="preview" class="py-12 px-6">
+	<div class="max-w-4xl mx-auto">
+		<h2 class="text-3xl font-bold mb-8 text-center">Inhaltliche Vorschau</h2>
+		<div class="space-y-8">
+			<!-- Preview Card 1 (Left) -->
+			<div class="flex flex-col md:flex-row gap-8 items-center">
+				<PreviewCard
+					title="Anekdote 1: Das Äffchen - Chaplin tanzt Tango"
+					content={content1}
+					image="/img_1.png"
+					class="md:w-1/2"
+					videoUrl="https://www.youtube.com/watch?v=0r5tjUC6rqg"
+					videoCaption="El monito, Juilo Caros Sextett 1925"
+				/>
+			</div>
+			<!-- Preview Card 2 (Right) -->
+			<div class="flex flex-col md:flex-row-reverse gap-8 items-center">
+				<PreviewCard
+					title="Anekdote 24: Nicht für Romantiker"
+					content={content2}
+					image="/img_2.png"
+					class="md:w-1/2"
+					videoUrl="https://www.youtube.com/watch?v=nJt5L_-vZ5w"
+					videoCaption="Miguel Caló mit Raúl Berón (29-04-1942)"
+				/>
+			</div>
+			<!-- Preview Card 3 (Left) -->
+			<div class="flex flex-col md:flex-row gap-8 items-center">
+				<PreviewCard
+					title="Anekdote 50: Ein fast vergessener Tango"
+					content={content3}
+					image="/img_3.jpeg"
+					class="md:w-1/2"
+					videoUrl="https://www.youtube.com/watch?v=nJt5L_-vZ5w"
+					videoCaption="Interview von Lavallén 2017 in Spanisch"
+				/>
+			</div>
+			<!-- Preview Card 4 (Right) -->
+			<div class="flex flex-col md:flex-row-reverse gap-8 items-center">
+				<PreviewCard
+					title="Anekdote 113: Was kommen wird"
+					content={content4}
+					image="/img_4.jpg"
+					class="md:w-1/2"
+					videoUrl="https://www.youtube.com/watch?v=UZ9yOQS6Gwk"
+					videoCaption="Lo que vendrá aufgenommen von Troilo 1963"
+				/>
 			</div>
 		</div>
 	</div>
-
-	<!-- Weitere Inhalte (z.B. Preview) -->
-</Layout>
+</section>
+{/* Index Section */}
+{/* Content Index Section */}
+<section id="index" class="py-12 px-6 bg-white">
+	<div class="max-w-4xl mx-auto">
+		<h2 class="text-3xl font-bold mb-8 text-center">Inhaltsverzeichnis</h2>
+		<div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+			<ul class="list-decimal list-inside space-y-2 text-lg">
+				<li>Vorwort</li>
+				<li>Salida</li>
+				<li>Kurze Tangogeschichte</li>
+				<li class="font-medium">Anekdoten
+					<ul class="list-disc list-inside pl-6 space-y-1 mt-2">
+						<li>Lustiges</li>
+						<li>Zu einzelnen Tangos</li>
+						<li>Künstler</li>
+						<li>Politik</li>
+						<li>Kultur</li>
+						<li>Fussball</li>
+						<li>Dies und Das</li>
+					</ul>
+				</li>
+				<li>Diskographien des Tango</li>
+				<li class="font-medium">Biographisches
+					<ul class="list-disc list-inside pl-6 space-y-1 mt-2">
+						<li>Sänger</li>
+						<li>Musiker</li>
+						<li>Tango Dichter</li>
+						<li>Tänzer</li>
+						<li>Orchester</li>
+					</ul>
+				</li>
+				<li>Glossar</li>
+				<li>Zeittafel</li>
+				<li>Internetlinks</li>
+			</ul>
+		</div>
+	</div>
+</section>
+{/* Buy Section */}
+<section id="buy" class="py-12 px-6 bg-gray-100">
+	<div class="max-w-4xl mx-auto">
+		<h2 class="text-3xl font-bold mb-8 text-center">Jetzt bestellen</h2>
+		<div class="flex flex-col md:flex-row justify-between items-center">
+			{/* Price and Details */}
+			<div class="mb-6 md:mb-0 md:w-1/2">
+				<p class="text-2xl font-bold mb-2">Preis: €22,00</p>
+				<p class="text-lg">Inklusive Versandkosten. Kostenlose Lieferung ab €50 Bestellwert.</p>
+				<p class="text-lg mt-4">
+					<strong>Format:</strong> Taschenbuch (237 Seiten)
+				</p>
+				<p class="text-lg">
+					<strong>ISBN:</strong> 978-3-96847-001-2
+				</p>
+			</div>
+			{/* Buy Button */}
+			<div class="md:w-1/2">
+				<a
+					href="https://abrazosbooks.com/product/tango-in-allen-lebenslagen-anekdoten-uber-musiker-sanger-und-tanzer/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-6 py-3 rounded-md transition duration-300 shadow-md block md:w-full"
+				>
+					Sofort kaufen
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+{/* Footer */}
+<footer class="bg-gray-800 text-white py-8 px-6">
+	<div class="max-w-4xl mx-auto">
+		<p class="text-center">© {currentYear} ABRAZOS Verlag. Alle Rechte vorbehalten.</p>
+	</div>
+</footer>
+</body>
+</html>
