@@ -1,0 +1,50 @@
+---
+import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Vorwort">
+    <div class="min-h-screen bg-[#f3f4f6] py-12 px-4">
+        <section class="py-12 px-6">
+            <div class="max-w-4xl mx-auto">
+                <!-- Back Button -->
+                <div class="mb-8">
+                    <a
+                            href="/tango-book/#index"
+                            class="inline-flex items-center px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300 transition-colors"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                        </svg>
+                        Zurück zum Inhaltsverzeichnis
+                    </a>
+                </div>
+                <div class="bg-white rounded-2xl shadow-xl p-8 relative">
+                    <!-- Preface Content -->
+                    <article class="prose lg:prose-lg mx-auto">
+                        <h1 class="text-4xl font-bold mb-8">Vorwort</h1>
+
+                        <div class="text-gray-700 leading-relaxed">
+                            <p class="mb-4">
+                                Liebe Leserinnen und Leser,
+                            </p>
+                            <p class="mb-4">
+                                Mit diesem Buch stellen wir eine Sammlung von Tango Anekdoten vor; interessant für Tänzer*innen, Musiker*innen und Geschichtenliebhaber*innen und für alle, die sich für Argentinien interessieren.
+                                Zunächst stellen wir im ersten Kapitel vor, wie es zu diesem Buch kam, zur Idee für diese Sammlung kam,dann geben wir eine Einführung in die Tangogeschichte, danach folgen die eigentlichen Geschichten, das „Eingemachte“ in Kapitel 3. Im nächsten Kapitel werden einige interessante Daten und und Fakten über den Tango aufgeführt, danach geht es weiter mit einer Kurzvorstellung der verschiedenen Künstler*innen, die in unseren Anekdoten erwähnt werden. Es hat keinen Anspruch auf Vollständigkeit, aber es soll für die Leser*innen einen ersten Überblick verschaffen in dem Wirrwarr von Namen und Orchestern, die in den Anekdoten vorkommen. Im Glossar finden sich einige Tango-Begriffe und eine Zeittafel, wo nur die allerwichtigsten Meilensteine des Tango vermerkt sind. Beigefügt sind QR-Codes, die zu entsprechenden Internetseiten führen, ein Literaturverzeichnis und zuletzt ein Index mit der vollständigen Auflistung der Künstler*innen und Tango-Stücke, auf die wir in den Anekdoten Bezug nehmen. Allen Leser*innen nun viel Spaß.
+                            </p>
+                            <!-- Add your preface text here -->
+                        </div>
+                    </article>
+
+                    <!-- Quote Block -->
+                    <div class="absolute right-8 top-8 w-64">
+                        <div class="border-l-4 border-gray-300 pl-4 italic">
+                            <p class="text-base text-gray-700 mb-2">Der Tango wartet auf Dich</p>
+                            <p class="font-semibold text-gray-600 text-sm">Aníbal Troilo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</Layout>

@@ -1,0 +1,184 @@
+---
+import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
+
+const timelineItems = [
+    {
+        year: "1884",
+        content: "• Der älteste bekannte Tango <em>Concha sucia</em>, wird vom afroargentinishen Musiker <span style='font-variant: small-caps;'>Casimiro Alcosta</span> komponiert, später wird er von <span style='font-variant: small-caps;'>Francisco Canaro</span> in <em>Cara sucia</em> umbenannt."
+    },
+    {
+        year: "1903",
+        content: "• <span style='font-variant: small-caps;'>Ángel Villoldo</span> spielt zum ersten mal seinen Tango <em>El choclo</em>, einer der berühmtesten Tangos der Guardia Vieja."
+    },
+    {
+        year: "1907",
+        content: "• <span style='font-variant: small-caps;'>Ángel Villoldo</span> führt zusammen mit der Familie Gobbi (Eltern von <span style='font-variant: small-caps;'>Alfredo Gobbi</span>) den Tango in Paris ein."
+    },
+    {
+        year: "1912",
+        content: "• Nach einer Musical-Uraufführung in London, wo einige Tangos getanzt werden, startet die erste Phase der Tango Euphorie in Europa und Nordamerika."
+    },
+    {
+        year: "1914",
+        content: "• Kaiser Wilhelm II. verbietet den Tango für die preußische Offiziere."
+    },
+    {
+        year: "1917",
+        content: "• <span style='font-variant: small-caps;'>Carlos Gardel</span> singt <em>Mi noche triste</em>: der Tango Canción wird geboren."
+    },
+    {
+        year: "1917",
+        content: "• In Montevideo wird <em>La Cumparsita</em> von <span style='font-variant: small-caps;'>Gerardo Mattos Rodríguez</span> von <span style='font-variant: small-caps;'>Roberto Firpo</span> uraufgeführt"
+    },
+    {
+        year: "1918",
+        content: "• <span style='font-variant: small-caps;'>Osvaldo Fresedo</span> gründet sein erstes Orchester."
+    },
+    {
+        year: "1923",
+        content: "• <span style='font-variant: small-caps;'>Juan Carlos Cobián</span> gründet sein Sextett."
+    },
+    {
+        year: "1924",
+        content: "• <span style='font-variant: small-caps;'>Julio De Caro</span> formiert sein berühmtes Sextett auf der Basis des Cobián Sextetts."
+    },
+    {
+        year: "1925",
+        content: "• <span style='font-variant: small-caps;'>Francisco Canaro</span> debütiert in Paris."
+    },
+    {
+        year: "1926",
+        content: "• <em>El Ciruja</em> wird uraufgeführt, der beste Lunfardo-Text des Tango."
+    },
+    {
+        year: "1928",
+        content: "• <span style='font-variant: small-caps;'>Carlos Gardel</span> debütiert mit großen Erfolg in Paris und singt mehrere Monate dort."
+    },
+    {
+        year: "1935",
+        content: "• <span style='font-variant: small-caps;'>Carlos Gardel</span> stirbt bei einem Flugzeugunfall in Medellín, Kolumbien."
+    },
+    {
+        year: "1936",
+        content: "• <span style='font-variant: small-caps;'>Luis</span> und <span style='font-variant: small-caps;'>Héctor Bates</span> veröffentlichen den ersten Band einer unvollständiger Geschichte des Tango [BAT]."
+    },
+    {
+        year: "1937",
+        content: "• Das <span style='font-variant: small-caps;'>Pedro Laurenz</span> Orchester nimmt den Tango <em>Arrabal</em> von <span style='font-variant: small-caps;'>José Pascual</span> auf."
+    },
+    {
+        year: "1939",
+        content: "• Das Orchester von <span style='font-variant: small-caps;'>Osvaldo Pugliese</span> debütiert."
+    },
+    {
+        year: "1943",
+        content: "• Die der Zensur des Lunfardo im Tango beginnt."
+    },
+    {
+        year: "1943",
+        content: "• <span style='font-variant: small-caps;'>Pugliese</span> komponiert <em>La yumba</em>"
+    },
+    {
+        year: "1944",
+        content: "• <span style='font-variant: small-caps;'>Discépolo</span> stell seinen Tango <em>Canción desesperada</em> vor."
+    },
+    {
+        year: "1944",
+        content: "• <span style='font-variant: small-caps;'>Horacio Salgán</span> gründet sein Orchester."
+    },
+    {
+        year: "1951",
+        content: "• <span style='font-variant: small-caps;'>Homero Manzi</span> und <span style='font-variant: small-caps;'>Discépolo</span> sterben."
+    },
+    {
+        year: "1951",
+        content: "• <span style='font-variant: small-caps;'>Troilo</span> schreibt <em>Responso</em>."
+    },
+    {
+        year: "1951",
+        content: "• <span style='font-variant: small-caps;'>Astor Piazzolla</span> komponiert <em>Prepárense</em>."
+    },
+    {
+        year: "1953",
+        content: "• <span style='font-variant: small-caps;'>Horacio Salgán</span> schreibt <em>A fuego lento</em>."
+    },
+    {
+        year: "1954",
+        content: "• <em>Lo que vendrá</em> von <span style='font-variant: small-caps;'>Astor Piazzolla</span>."
+    },
+    {
+        year: "1960",
+        content: "• Das Quinteto Real mit <span style='font-variant: small-caps;'>Horacio Salgán</span>, <span style='font-variant: small-caps;'>Ubaldo De Lío</span>, <span style='font-variant: small-caps;'>Enrique Mario Francini</span>, <span style='font-variant: small-caps;'>Pedro Laurenz</span> und <span style='font-variant: small-caps;'>Rafael Ferro</span> wird begründet."
+    },
+    {
+        year: "1960",
+        content: "• <span style='font-variant: small-caps;'>Carlos Di Sarli</span> stirbt."
+    },
+    {
+        year: "1966",
+        content: "• Die umfassende Geschichte der Musikstile des Tango von <span style='font-variant: small-caps;'>Luis Adolfo Sierra</span> wird veröffentlicht."
+    },
+    {
+        year: "1975",
+        content: "• Es sterben <span style='font-variant: small-caps;'>Aníbal Troilo</span> und <span style='font-variant: small-caps;'>Cátulo Castillo</span>."
+    },
+    {
+        year: "1983",
+        content: "• Das Tangoshow <em>Tango argentino</em> der Choreographen <span style='font-variant: small-caps;'>Segovia</span> und <span style='font-variant: small-caps;'>Orezoli</span> triumphiert in Europa und startet die zweite Tango Euphorie, die bis heute andauert."
+    },
+    {
+        year: "1995",
+        content: "• <span style='font-variant: small-caps;'>Osvaldo Pugliese</span> stirbt."
+    },
+    {
+        year: "2011",
+        content: "• <span style='font-variant: small-caps;'>Emilio Balcarce</span> stirbt."
+    },
+    {
+        year: "2014",
+        content: "• <span style='font-variant: small-caps;'>Leopoldo Federico</span> stirbt."
+    },
+    {
+        year: "2016",
+        content: "• <span style='font-variant: small-caps;'>Horacio Salgán</span> stirbt mit 100 Jahren."
+    }
+];
+---
+
+<Layout title="Zeittafel">
+    <div class="min-h-screen bg-[#f3f4f6] py-12 px-4">
+        <section class="py-12 px-6">
+            <div class="max-w-4xl mx-auto">
+                <!-- Back Button -->
+                <div class="mb-8">
+                    <a
+                            href="/tango-book/#index"
+                            class="inline-flex items-center px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300 transition-colors"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                        </svg>
+                        Zurück zum Inhaltsverzeichnis
+                    </a>
+                </div>
+                <div class="bg-white rounded-2xl shadow-xl p-8 relative">
+                    <!-- Zeittafel Content -->
+                    <article class="prose lg:prose-lg mx-auto">
+                        <h1 class="text-4xl font-bold mb-8">Zeittafel</h1>
+
+                        <div class="text-gray-700 leading-relaxed">
+                            {timelineItems.map((item) => (
+                                    <p class="mb-4">
+                                        <strong>{item.year}:</strong>
+                                        <Fragment set:html={item.content} />
+                                    </p>
+                            ))}
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</Layout>

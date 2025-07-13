@@ -1,0 +1,78 @@
+---
+import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
+
+const glossaryItems = [
+    "Alte Garde: s. Guardia vieja unten, s. auch Neue Garde.",
+    "Arrabal: Armenviertel - in der Tangowelt steht der Begriff auch für Heimat, die im Exil immer sehnsuchtsvoll verklärt und vermisst wird.",
+    "Barrio: Stadtviertel, Bezirk oder Nachbarschaft.",
+    "Cabaret: Aus Paris importiert ab 1910, ist das Cabaret ein wichtiger Spielort der wichtigsten Tangoorchester. Im Unterschied zu Cafés wird in Cabaret zur Musik getanzt und frequentiert von der Oberschicht.",
+    "Cabeceo: Nicken, Aufforderung zum Tanz durch gemeinsamen Augenkontakt.",
+    "Cakewalk: Der Cakewalk ist ein Gesellschaftstanz, der um 1850 entstand und zunächst Chalk Line Walk (englisch für „Kreideliniengang“) genannt wurde. Von 1895 bis 1905 wurde der Tanz dann auf der Grundlage von Ragtime-Musik als Cakewalk zum bekannten Modetanz; 1915 hatte er eine zweite Blütezeit.",
+    "Canyengue: Musikalisches Stilmittel der Orchester; eine Art Perkussioneffekt, der erzeugt wird, indem man mit den Händen auf den Blasbalg des Bandoneons oder mit den Bogen auf den Kontrabass - bzw. Geigenseiten schlägt. Bezeichnet auch ein früheren Stil des Tango-Tanzes.",
+    "Compadre: Ein zu Beginn des 20. Jahrhunderts vom Land in dem Rand der Großstadt gekommener und dort entwurzelter Gaucho. In seinem Viertel ist er ein gefürchteter Mann der Ehre und des Messers.",
+    "Compadrito: Junger Mann, der den Compadre mit prahlerischem Gehabe und geckenhafter Kleidung nachahmt.",
+    "Corte: Schnitt - Figur des Tangos, bei der das Tanzpaar abrupt stehen bleibt.",
+    "Cortina: Vorhang, Pause zwischen zwei Tandas (s. dort). Die Tanzfläche leert sich und die Paare finden sich neu zusammen.",
+    "Criollo: Kreole, kreolisch. die im Lande geborenen Nachfahren von spanischen (oder anderen europäischen) Eltern, im Gegensatz zu den Stimmen oder Mischlingen, die in Amerika geborenen Nachkommen von schwarzen Sklaven, in weiterem Sinne jeder, der in Lateinamerika geboren wurde und die jeweils landestypischen Charaktermerkmale trägt; einheimisch.",
+    "Gancho: Haken, der mit der einem Bein zwischen die Beine des Partners gemacht wird.",
+    "Gaucho: Nennt man in Argentinien, Paraguay und Uruguay vorwiegend Nachkommen von Spaniern und Indios, die in den Pampas Viehzucht betreiben, äquivalent zum nordamerikanischen Cowboy.",
+    "Giro: Drehung, eine drehende Figur oder Schritt.",
+    "Goldene Zeit: Zeit zwischen 1935 und 1955, wo der Tango ein Massenphänomen war und die besten Orchester spielten.",
+    "Guardia Vieja: Alte Garde Tangomusiker von 1895 bis 1925, in der Regel ohne musikalische Ausbildung, dafür aber großer musikalischer Reichtum.",
+    "Lunfardo: in der Tango-Lyrik und der Terminologie allgemein verwendeter Jargon der Unterwelt von Buenos Aires, welche in der 2. Hälfte des 19. Jahrhunderts in Buenos Aires entstanden ist, und heute noch in der informellen Sprache in Argentinien und auch in Uruguay benutzt wird.",
+    "Maxixe: Volkstanz aus Brasilien mit raschem synkopischen 2/4 Takt.",
+    "Milonga: (1)eine rioplatensische Musikrichtung - meist mit Gesang; (2) eine Tanzgattung - Vorläuferin und Untergattung des Tango Argentino, (3) rhythmisch stark ausgeprägtes Tanzlied in mäßig schnellen 2/4 Takt; (4) eine Tango-Veranstaltung, auf welcher zu den drei Rhythmen getanzt wird: Tango, Vals und Milonga (Musikrichtung); auch der Ort dieser Tanzveranstaltung (Tango-Tanzlokal).",
+    "Milonguera/o: Tangoliebhaber; im engen Sinne ein Tangotänzer, der noch mit den Orchestern der Goldenen Zeit getanzt hat.",
+    "Neue Garde: Ensembles, die nach Julio De Caros Sextett unter seinem Einfluss entstanden sind, auch als Zeit nach De Caro bekannt von 1925 bis 1950.",
+    "Orillero: Stil des Tango, getanzt am Rande der Metropole, voll von Cortes und Quebradas.",
+    "Porteño: von puerto (Hafen) abgeleitet - (1) zu Buenos Aires gehörend. (2) Bewohner von Buenos Aires bezeichnen sich selbst als Porteños.",
+    "Quebrada: Gebrochen - (1) Unterbrechung im Tanzfluss und (2) Figur beim Tango, bei der der Oberkörper geneigt wird.",
+    "Rubato: bezeichnet in der Musik verschiedene Arten von Verlängerung oder Verkürzung im Spielen von Tönen. Rubato wird häufig von Orchestern wie die von Pugliese und Francini-Pontier, angewendet.",
+    "Schottisch: europäischer Paartanz in raschen 2/4-Takt mit Wechselschritt, Vorläufer der Polka. Der Name Schottisch leitet sich vermutlich von der Ecossaise (Schottischer Walzer) her. Er war schon um 1810 bekannt und im 19. Jahrhundert in Lateinamerika sehr beliebt.",
+    "Staccato: abgehackter Stil typisch für die Orchester von Juan D'Arienzo und Rodolfo Biagi; das Gegenteil von Rubato.",
+    "Tanda: Eine bestimmte Anzahl von Stücken gleichen Stils (z.B. je 4 Tangos, oder 3 Vals, oder 3 Milongas), die vom DJ aufgelegt werden. Nach einer Tanda folgt eine Cortina s. dort.",
+    "Tanguero/a: Tangoliebhaber/in, Milonguero/a.",
+    "Vals: Tango im Dreivierteltakt, südamerikanische Variante des europäischen Walzers. Andere Variationen sind der Vals peruano und Vals cruzado, der von vielen Tangoorchestern gepflegt wurde."
+];
+---
+
+<Layout title="Glossar">
+    <div class="min-h-screen bg-[#f3f4f6] py-12 px-4">
+        <section class="py-12 px-6">
+            <div class="max-w-4xl mx-auto">
+                <!-- Back Button -->
+                <div class="mb-8">
+                    <a
+                            href="/tango-book/#index"
+                            class="inline-flex items-center px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300 transition-colors"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                        </svg>
+                        Zurück zum Inhaltsverzeichnis
+                    </a>
+                </div>
+                <div class="bg-white rounded-2xl shadow-xl p-8 relative">
+                    <!-- Glossar Content -->
+                    <article class="prose lg:prose-lg mx-auto">
+                        <h1 class="text-4xl font-bold mb-8">Glossar</h1>
+
+                        <div class="text-gray-700 leading-relaxed">
+                            {glossaryItems.map((item) => {
+                                const [term, ...rest] = item.split(': ');
+                                const definition = rest.join(': ');
+                                return (
+                                        <p class="mb-4">
+                                            <strong>{term}:</strong> {definition}
+                                        </p>
+                                );
+                            })}
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</Layout>
