@@ -6,13 +6,15 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Internetlinks">
 <div class="min-h-screen bg-[#f3f4f6] py-12 px-4">
     <div class="max-w-4xl mx-auto">
-        <!-- Back to Home link using global styles -->
         <div class="mb-8">
-            <a href="/tango-book/#index" class="back-link">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+            <a
+                    href="/tango-book/#index"
+                    class="inline-flex items-center px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300 transition-colors"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" />
                 </svg>
-                Zurück zur Startseite
+                Zurück zum Inhaltsverzeichnis
             </a>
         </div>
         <div class="bg-white rounded-2xl shadow-xl p-8">
@@ -22,6 +24,32 @@ import Layout from '../layouts/Layout.astro';
                 🌐 Internetlinks
             </h1>
                 <div class="space-y-10">
+                    <!-- Tango and Chaos Section -->
+                    <div class="bg-gray-50 p-8 rounded-xl">
+
+                        <p class="text-gray-600 mb-6">
+                            Hier einige Links, die im dem Buch angegeben wurden.
+                        </p>
+
+                    </div>
+                    <!-- Tango and Chaos Section -->
+                    <div class="bg-gray-50 p-8 rounded-xl">
+                        <div class="flex items-center mb-6">
+                            <span class="text-blue-600 text-2xl mr-4">💃</span>
+                            <h2 class="text-2xl font-semibold text-gray-700">Tango and Chaos in Buenos Aires</h2>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            Abenteuer und Blog eines 'Gringo' in Buenos Aires. Die Tango-Videos findet man auf Youtube.
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <a href="https://www.tangoandchaos.org/" class="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <span class="text-blue-600 hover:text-blue-700 underline">tangoandchaos.org</span>
+                            </a>
+                            <a href="https://www.youtube.com/playlist?list=PL4T2OcBQmqw3O__g4HyOe3OfJQZffdEYD" class="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                <span class="text-blue-600 hover:text-blue-700 underline">youtube.com</span>
+                            </a>
+                        </div>
+                    </div>
                     <!-- Todotango Section -->
                     <div class="bg-gray-50 p-8 rounded-xl">
                         <div class="flex items-center mb-6">
