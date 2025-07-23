@@ -1,0 +1,31 @@
+---
+// src/components/LinkSection.astro
+interface Link {
+    href: string;
+    text: string;
+}
+
+interface Props {
+    icon: string;
+    title: string;
+    description: string;
+    links: Link[];
+}
+
+const { icon, title, description, links } = Astro.props;
+---
+
+<div class="bg-gray-50 p-8 rounded-xl">
+    <div class="flex items-center mb-6">
+        <span class="text-blue-600 text-2xl mr-4">{icon}</span>
+        <h2 class="text-2xl font-semibold text-gray-700">{title}</h2>
+    </div>
+    <p class="text-gray-600 mb-6">{description}</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {links.map(link => (
+            <a href={link.href} class="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <span class="text-blue-600 hover:text-blue-700 underline">{link.text}</span>
+            </a>
+        ))}
+    </div>
+</div>
