@@ -5,7 +5,7 @@ const { title, content, image, videoUrl, videoCaption, imageCaption } = Astro.pr
     <div class="relative aspect-[16/9] mb-4">
         <img
                 src={image}
-                alt={title}
+                alt={imageCaption || title}
                 class="w-full h-full object-cover rounded-lg"
                 loading="lazy"
         />
@@ -19,7 +19,7 @@ const { title, content, image, videoUrl, videoCaption, imageCaption } = Astro.pr
     <div class="text-gray-600 text-sm md:text-base mb-3">
         <Fragment set:html={content} />
     </div>
-    <a href={videoUrl} class="text-blue-600 hover:text-blue-700 underline mb-2 inline-block text-sm md:text-base">
+    <a href={videoUrl} class="text-blue-600 hover:text-blue-700 underline mb-2 inline-block text-sm md:text-base" target="_blank" rel="noopener noreferrer">
         Watch Video on YouTube
     </a>
     <p class="text-gray-500 text-xs md:text-sm italic">{videoCaption}</p>

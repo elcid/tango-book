@@ -17,8 +17,8 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                'from-custom-light-red': '#ecc4c7',
-                'to-custom-red': '#ec2b37'
+                'custom-light-red': '#ecc4c7',
+                'custom-red': '#ec2b37'
             }
         },
     },
