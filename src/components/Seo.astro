@@ -1,0 +1,27 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  url?: string;
+}
+
+const { 
+  title = "Tango in allen Lebenslagen", 
+  description = "Anekdoten über Musiker, Sänger und Tänzer", 
+  image = "/tango-book/TangoBuch.png",
+  url = "https://elcid.github.io/tango-book/"
+} = Astro.props;
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image} />
+<meta property="og:url" content={url} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href={url} />

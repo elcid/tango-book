@@ -1,5 +1,6 @@
 ---
 import PreviewCard from '../components/PreviewCard.astro';
+import Seo from '../components/Seo.astro';
 const content1 = `Im Jahr 1931 machte das Orchester von  <span style="font-variant: small-caps;">Julio de Caro</span> eine Tour
 durch Europa, diesmal waren sie bei einer konzertanten Aufführung
 in Nizza. Das Konzert
@@ -40,10 +41,10 @@ eine rigorose Zensur des Tango und anderer Medien wie Radio und
 Presse eingeführt. Diese Zensur blieb in Kraft bis 1949. Was schon
 seit Anfang der dreißiger Jahre von Konservativen und auch von Teilen
 der katholischen Kirche gefordert wurde, wurde jetzt mit den Militärs
-durchgesetzt. Besonders in Verruf kamen Tangos, die zu „negativ“
+durchgesetzt. Besonders in Verruf kamen Tangos, die zu "negativ"
 waren oder das Lunfardo in ihren Texten benutzten; unter diesen
 befanden sich aber genau die besten Tangos. Die Zensur betraf am
-meisten das Radio. Es durften nur „positive“ Tangos ausgestrahlt
+meisten das Radio. Es durften nur "positive" Tangos ausgestrahlt
 werden, und die Lunfardo-Texte durften nur in korrektem Spanisch
 gesungen werden. Es betraft auch Instrumentaltangos, wie der Tango
 <em>Lo que vendrá</em> von <span style="font-variant: small-caps;">Astor Piazzolla</span> und andere.
@@ -68,7 +69,11 @@ const currentYear = new Date().getFullYear();
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width" />
-	<title>Tango in allen Lebenslagen</title>
+	<Seo 
+		title="Tango in allen Lebenslagen" 
+		description="Anekdoten über Musiker, Sänger und Tänzer" 
+		image="/tango-book/TangoBuch.png"
+	/>
 </head>
 <body class="bg-white text-gray-800 min-h-screen">
 {/* Header */}
@@ -178,9 +183,9 @@ const currentYear = new Date().getFullYear();
 		<h2 class="text-3xl font-bold mb-8 text-center">Inhaltsverzeichnis</h2>
 		<div class="bg-gray-50 p-6 rounded-lg shadow-sm">
 			<ul class="list-decimal list-inside space-y-2">
-				<li class="text-lg"><a href="/tango-book/vorwort" class="text-gray-800 hover:text-blue-600 no-underline hover:underline">Vorwort</a></li>
-				<li class="text-lg"><a href="/tango-book/salida" class="text-gray-800 hover:text-blue-600 no-underline hover:underline">Salida</a></li>
-				<li class="text-lg"><a href="/tango-book/kurze-tangogeschichte" class="text-gray-800 hover:text-blue-600 no-underline hover:underline">Kurze Tangogeschichte</a></li>
+				<li class="text-lg"><a href="/tango-book/book/vorwort" class="text-gray-800 hover:text-blue-600 no-underline hover:underline">Vorwort</a></li>
+				<li class="text-lg"><a href="/tango-book/book/salida" class="text-gray-800 hover:text-blue-600 no-underline hover:underline">Salida</a></li>
+				<li class="text-lg"><a href="/tango-book/book/kurze-tangogeschichte" class="text-gray-800 hover:text-blue-600 no-underline hover:underline">Kurze Tangogeschichte</a></li>
 				<li class="font-medium">Anekdoten
 					<ul class="list-disc list-inside pl-6 space-y-1 mt-2">
 						<li>Lustiges</li>
@@ -202,9 +207,9 @@ const currentYear = new Date().getFullYear();
 						<li>Orchester</li>
 					</ul>
 				</li>
-				<li class="text-lg"><a href="/tango-book/glossar" class="text-gray-800 hover:text-blue-600 no-underline hover:underline">Glossar</a></li>
-				<li class="text-lg"><a href="/tango-book/zeittafel" class="text-gray-800 hover:text-blue-600 no-underline hover:underline">Zeittafel</a></li>
-				<li class="text-lg"><a href="/tango-book/internetlinks" class="text-gray-800 hover:text-blue-600 no-underline hover:underline">Internetlinks</a></li>
+				<li class="text-lg"><a href="/tango-book/book/glossar" class="text-gray-800 hover:text-blue-600 no-underline hover:underline">Glossar</a></li>
+				<li class="text-lg"><a href="/tango-book/book/zeittafel" class="text-gray-800 hover:text-blue-600 no-underline hover:underline">Zeittafel</a></li>
+				<li class="text-lg"><a href="/tango-book/book/internetlinks" class="text-gray-800 hover:text-blue-600 no-underline hover:underline">Internetlinks</a></li>
 			</ul>
 		</div>
 	</div>
