@@ -1,12 +1,41 @@
 ---
-const { title, content, image, videoUrl, videoCaption, imageCaption } = Astro.props;
+interface Props {
+  title: string;
+  content: string;
+  image: string;
+  videoUrl: string;
+  videoCaption?: string;
+  imageCaption?: string;
+  padding?: string;
+  shadow?: string;
+  rounded?: string;
+  imageRounded?: string;
+  hoverEffect?: boolean;
+  aspectRatio?: string;
+}
+
+const {
+  title,
+  content,
+  image,
+  videoUrl,
+  videoCaption,
+  imageCaption,
+  padding = "p-4 md:p-6",
+  shadow = "shadow-md",
+  rounded = "rounded-lg",
+  imageRounded = "rounded-lg",
+  hoverEffect = true,
+  aspectRatio = "aspect-[16/9]"
+} = Astro.props;
 ---
-<div class="bg-white p-4 md:p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-    <div class="relative aspect-[16/9] mb-4">
+
+<div class={`bg-white ${padding} ${rounded} ${shadow} ${hoverEffect ? 'hover:shadow-lg transition-shadow duration-300' : ''}`}>
+    <div class={`relative ${aspectRatio} mb-4`}>
         <img
                 src={image}
                 alt={imageCaption || title}
-                class="w-full h-full object-cover rounded-lg"
+                class={`w-full h-full object-cover ${imageRounded}`}
                 loading="lazy"
         />
         {imageCaption && (
@@ -22,5 +51,7 @@ const { title, content, image, videoUrl, videoCaption, imageCaption } = Astro.pr
     <a href={videoUrl} class="text-blue-600 hover:text-blue-700 underline mb-2 inline-block text-sm md:text-base" target="_blank" rel="noopener noreferrer">
         Watch Video on YouTube
     </a>
-    <p class="text-gray-500 text-xs md:text-sm italic">{videoCaption}</p>
+    {videoCaption && (
+        <p class="text-gray-500 text-xs md:text-sm italic">{videoCaption}</p>
+    )}
 </div>
