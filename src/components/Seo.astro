@@ -1,27 +1,45 @@
 ---
-interface Props {
+export interface Props {
   title?: string;
   description?: string;
   image?: string;
   url?: string;
+  type?: string;
+  locale?: string;
+  robots?: string;
 }
 
-const { 
-  title = "Tango in allen Lebenslagen", 
-  description = "Anekdoten über Musiker, Sänger und Tänzer", 
+const {
+  title = "Tango in allen Lebenslagen",
+  description = "Anekdoten über Musiker, Sänger und Tänzer — ein faszinierendes Sammelwerk über die Welt des Tangos von Dr. J. Rodrigo Reyes Martínez und Monika Fröhlich.",
   image = "/tango-book/TangoBuch.png",
-  url = "https://elcid.github.io/tango-book/"
+  url = "https://elcid.github.io/tango-book/",
+  type = "website",
+  locale = "de_DE",
+  robots = "index, follow",
 } = Astro.props;
 ---
 
 <title>{title}</title>
 <meta name="description" content={description} />
+<meta name="robots" content={robots} />
+
+<!-- Open Graph -->
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={image} />
 <meta property="og:url" content={url} />
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content="Tango in allen Lebenslagen" />
+<meta property="og:locale" content={locale} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={image} />
-<meta name="twitter:card" content="summary_large_image" />
+
 <link rel="canonical" href={url} />
+
+<!-- Structured data slot for JSON-LD -->
+{ Astro.slots.has("structured-data") && <slot name="structured-data" /> }

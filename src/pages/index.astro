@@ -73,7 +73,34 @@ const currentYear = new Date().getFullYear();
 		title="Tango in allen Lebenslagen" 
 		description="Anekdoten über Musiker, Sänger und Tänzer" 
 		image="/tango-book/TangoBuch.png"
-	/>
+	>
+		<script is:inline type="application/ld+json" slot="structured-data">
+			{JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "Book",
+				"name": "Tango in allen Lebenslagen",
+				"alternateName": "Anekdoten über Musiker, Sänger und Tänzer",
+				"author": [
+					{ "@type": "Person", "name": "Dr. J. Rodrigo Reyes Martínez" },
+					{ "@type": "Person", "name": "Monika Fröhlich" }
+				],
+				"isbn": "978-3-96847-001-2",
+				"numberOfPages": 237,
+				"publisher": { "@type": "Organization", "name": "ABRAZOS Verlag" },
+				"inLanguage": "de-DE",
+				"description": "Ein faszinierendes Sammelwerk von Tango-Anekdoten, die die Welt des Tangos beleben. Von Carlos Gardel bis zu unvergesslichen Tänzern und Musikern.",
+				"image": "https://elcid.github.io/tango-book/TangoBuch.png",
+				"url": "https://elcid.github.io/tango-book/",
+				"offers": {
+					"@type": "Offer",
+					"price": "22.00",
+					"priceCurrency": "EUR",
+					"availability": "https://schema.org/InStock",
+					"url": "https://abrazosbooks.com/product/tango-in-allen-lebenslagen-anekdoten-uber-musiker-sanger-und-tanzer/"
+				}
+			})}
+		</script>
+	</Seo>
 </head>
 <body class="bg-white text-gray-800 min-h-screen">
 {/* Header */}

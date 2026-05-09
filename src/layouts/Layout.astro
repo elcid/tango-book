@@ -1,14 +1,42 @@
 ---
+import Seo from '../components/Seo.astro';
 import '../styles/global.css';
-const { title } = Astro.props;
+
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string;
+  pageType?: string;
+}
+
+const {
+  title,
+  description,
+  image = "/tango-book/TangoBuch.png",
+  canonicalURL,
+  pageType = "article",
+} = Astro.props;
+
+const baseUrl = "https://elcid.github.io/tango-book";
+const url = canonicalURL ?? baseUrl + "/";
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{title}</title>
+	<Seo
+		title={`${title} — Tango in allen Lebenslagen`}
+		description={description ?? "Ein faszinierendes Sammelwerk über die Welt des Tangos von Dr. J. Rodrigo Reyes Martínez und Monika Fröhlich."}
+		image={image}
+		url={url}
+		type={pageType}
+		locale="de_DE"
+	/>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-white text-gray-800 min-h-screen">
