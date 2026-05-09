@@ -10,16 +10,17 @@ export interface Props {
   pageType?: string;
 }
 
+const baseUrl = new URL(import.meta.env.BASE_URL, Astro.site).href;
+
 const {
   title,
   description,
-  image = "/tango-book/TangoBuch.png",
+  image = import.meta.env.BASE_URL + "TangoBuch.png",
   canonicalURL,
   pageType = "article",
 } = Astro.props;
 
-const baseUrl = "https://elcid.github.io/tango-book";
-const url = canonicalURL ?? baseUrl + "/";
+const url = canonicalURL ?? baseUrl;
 ---
 
 <!DOCTYPE html>

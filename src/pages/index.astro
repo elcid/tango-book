@@ -89,8 +89,8 @@ const currentYear = new Date().getFullYear();
 				"publisher": { "@type": "Organization", "name": "ABRAZOS Verlag" },
 				"inLanguage": "de-DE",
 				"description": "Ein faszinierendes Sammelwerk von Tango-Anekdoten, die die Welt des Tangos beleben. Von Carlos Gardel bis zu unvergesslichen Tänzern und Musikern.",
-				"image": "https://elcid.github.io/tango-book/TangoBuch.png",
-				"url": "https://elcid.github.io/tango-book/",
+				"image": new URL(import.meta.env.BASE_URL + "TangoBuch.png", Astro.site).href,
+				"url": new URL(import.meta.env.BASE_URL, Astro.site).href,
 				"offers": {
 					"@type": "Offer",
 					"price": "22.00",
