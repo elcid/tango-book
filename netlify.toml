@@ -1,0 +1,10 @@
+# Netlify deployment config for tangobuch.jorge-rodrigo.de
+# This file tells Netlify how to build and deploy the site.
+# See: https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  command = "pnpm astro build --config astro.config.netlify.mjs"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
