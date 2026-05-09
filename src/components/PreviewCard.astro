@@ -6,6 +6,7 @@ interface Props {
   videoUrl: string;
   videoCaption?: string;
   imageCaption?: string;
+  class?: string;
   padding?: string;
   shadow?: string;
   rounded?: string;
@@ -21,6 +22,7 @@ const {
   videoUrl,
   videoCaption,
   imageCaption,
+  class: className,
   padding = "p-4 md:p-6",
   shadow = "shadow-md",
   rounded = "rounded-lg",
@@ -30,7 +32,7 @@ const {
 } = Astro.props;
 ---
 
-<div class={`bg-white ${padding} ${rounded} ${shadow} ${hoverEffect ? 'hover:shadow-lg transition-shadow duration-300' : ''}`}>
+<div class={`bg-white ${padding} ${rounded} ${shadow} ${hoverEffect ? 'hover:shadow-lg transition-shadow duration-300' : ''} ${className ?? ''}`}>
     <div class={`relative ${aspectRatio} mb-4`}>
         <img
                 src={image}
