@@ -1,9 +1,13 @@
 # build output
 dist/
 dist-telekom/
+.netlify/
 
 # generated types
 .astro/
+
+# tool-generated
+.deepseek/
 
 # dependencies
 node_modules/
